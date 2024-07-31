@@ -18,7 +18,7 @@ public class MemberInsertController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		/*
 		 * Member m = new Member(); 
-		 * m.setUserId(request.getParameter("UserId"));
+		 * m.setUserId(request.getParameter("userId"));
 		 * m.setUserId(request.getParameter("userPwd"));
 		 * m.setUserId(request.getParameter("userName"));
 		 * m.setUserId(request.getParameter("email"));
