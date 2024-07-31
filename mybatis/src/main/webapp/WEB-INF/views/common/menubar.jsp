@@ -1,90 +1,80 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>MyBatis main</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <style>
-.login-area a {
-	text-decoration: none;
-	color: black;
-	font-size: 12px;
-	cursor: pointer;
-}
-
-.nav-area {
-	margin-top : 10px;
-	background-color: black;
-	color: white;
-	height: 50px;
-}
-
-.menu {
-	display: inline-block;
-	width: 24.6%;
-	line-height: 50px;
-	font-size: 16px;
-	font-weight: bold;
-}
-
-.menu:hover {
-	background-color: rgb(204, 204, 204);
-	color: black;
-}
+    .login-area a {
+        text-decoration: none;
+        color: black;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    .nav-area{
+        background-color: black;
+        color: white;
+        height: 50px;
+    }
+    .menu {
+        display: inline-block;
+        width: 24.6%;
+        line-height: 50px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .menu:hover {
+        background-color: rgb(204, 204, 204);
+        color: black;
+    }
 </style>
 </head>
 <body>
-	<h1 align="center">Welcome to MyBatis</h1>
+    <h1 align="center">Welcome to MyBatis</h1>
 
+    <div class="login-area" align="right">
+        <form action="" method="post">
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td><input name="userId" required></td>
+                    <td rowspan="2"><button>로그인</button></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password" name="userPwd" required></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <a href="">회원가입</a>
+                        <a href="">아이디/비밀번호 찾기</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
 
-	<div class="login-area" align="right">
-		<c:choose>
-			<c:when test="${empty loginUser }">
-						<!-- 로그인 전 -->
-				<form action="" method="post">
-					<table>
-						<tr>
-							<td>아이디</td>
-							<td><input name="userId" required></td>
-							<td rowspan="2"><button style="height:45px">로그인</button></td>
-						</tr>
-						<tr>
-							<td>비밀번호</td>
-							<td><input type="password" name="userPwd" required></td>
-						</tr>
-						<tr>
-							<td colspan="3" style="text-align:center;">
-							<a href="enrollForm.me">회원가입</a>&emsp;&emsp;
-							<a href="">아이디/비밀번호찾기</a></td>
-						</tr>
-					</table>
-				</form>
-			</c:when>
-			<c:otherwise>
-				<!-- 로그인 후 -->
-				<div class="login-area" align="right">
-					<table>
-						<tr>
-							<td colspan="2">
-								<h3>xxx님 환영합니다</h3>
-							</td>
-						</tr>
-						<tr>
-							<td><a href="">마이페이지</a></td>
-							<td><a href="">로그아웃</a></td>
-						</tr>
-					</table>
-				</div>
-			</c:otherwise>
-		</c:choose>
-	</div>
-	<nav class="nav-area" align="center">
-		<div class="menu">HOME</div>
-		<div class="menu">공지사항</div>
-		<div class="menu">게시판</div>
-		<div class="menu">ETC</div>
-	</nav>
+    <div class="login-area" align="right">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <h3>xxx님 환영합니다</h3>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="">마이페이지</a></td>
+                <td><a href="">로그아웃</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <nav class="nav-area" align="center">
+        <div class="menu">HOME</div>
+        <div class="menu">공지사항</div>
+        <div class="menu">게시판</div>
+        <div class="menu">ETC</div>
+    </nav>
 </body>
 </html>
