@@ -17,19 +17,19 @@ public class MemberInsertController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		/*
-		 * Member m = new Member(); 
-		 * m.setUserId(request.getParameter("userId"));
-		 * m.setUserId(request.getParameter("userPwd"));
-		 * m.setUserId(request.getParameter("userName"));
-		 * m.setUserId(request.getParameter("email"));
-		 * m.setUserId(request.getParameter("birthday"));
-		 * m.setUserId(request.getParameter("gender"));
-		 * m.setUserId(request.getParameter("phone"));
-		 * m.setUserId(request.getParameter("address"));
-		 * m.setUserId(request.getParameter("enrollDate"));
-		 * m.setUserId(request.getParameter("modifyDate"));
-		 * m.setUserId(request.getParameter("status"));
-		 *  => 이렇게 해줘도 된다
+		  Member m = new Member(); 
+		  m.setUserId(request.getParameter("userId"));
+		  m.setUserId(request.getParameter("userPwd"));
+		  m.setUserId(request.getParameter("userName"));
+		  m.setUserId(request.getParameter("email"));
+		  m.setUserId(request.getParameter("birthday"));
+		  m.setUserId(request.getParameter("gender"));
+		  m.setUserId(request.getParameter("phone"));
+		  m.setUserId(request.getParameter("address"));
+		  m.setUserId(request.getParameter("enrollDate"));
+		  m.setUserId(request.getParameter("modifyDate"));
+		  m.setUserId(request.getParameter("status"));
+		   => 이렇게 해줘도 된다
 		 */
 		Member m = new Member(
 				request.getParameter("userId"),
