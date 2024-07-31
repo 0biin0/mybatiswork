@@ -1,11 +1,11 @@
-package com.study.mybatis.member.service;
+package com.study.mybatis.member.sevice;
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.study.mybatis.common.template.Template;
 import com.study.mybatis.member.dao.MemberDao;
 
-public class MemberServiceImpI implements MemberService {
+public class MemberServiceImpl implements MemberService {
 	private MemberDao mDao = new MemberDao();
 	
 	@Override

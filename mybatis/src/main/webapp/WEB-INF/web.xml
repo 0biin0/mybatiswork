@@ -21,12 +21,12 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>idCheckController</display-name>
-    <servlet-name>idCheckController</servlet-name>
-    <servlet-class>com.study.mybatis.common.template.idCheckController</servlet-class>
+    <display-name>IdCheckController</display-name>
+    <servlet-name>IdCheckController</servlet-name>
+    <servlet-class>com.study.mybatis.member.controller.IdCheckController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>idCheckController</servlet-name>
+    <servlet-name>IdCheckController</servlet-name>
     <url-pattern>/idCheck.me</url-pattern>
   </servlet-mapping>
 </web-app>
