@@ -47,6 +47,19 @@
 				<a href="list.bo?nowPage=${ pi.nowPage + 1 }">[다음]</a>
 			</c:if>	
 		</div>
+		
+		<div>
+			<form action="search.bo">
+				<select name="keyField">
+					<option value="writer">작성자</option>
+					<option value="title">제목</option>
+					<option value="content">내용</option>
+				</select>
+				<input name="keyWord">
+				<button>검색</button>
+				<input type="hidden" name="nowPage" value="1">
+			</form>
+		</div>
 	</div>
 </body>
 </html>
