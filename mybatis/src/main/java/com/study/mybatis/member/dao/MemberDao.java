@@ -13,4 +13,9 @@ public class MemberDao {
 		
 		return sqlSession.insert("memberMapper.insertMember", m);
 	}
+
+	public Member loginMember(SqlSession sqlSession, Member m) {
+		
+		return sqlSession.selectOne("memberMapper.loginMember" , m); //한행 가져오기 : selectOne
+	}
 }
