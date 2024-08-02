@@ -12,7 +12,15 @@
 		<result column ="count" property="count" />
 		<result column ="create_date" property="createDate" />
 	</resultMap>
-	<select id="selectTotalRecord" resultType="_int">
+	
+	<resultMap type="Reply" id="replyResultSet">
+		<result column ="reply_no" property="replyNo" />
+		<result column ="reply_writer" property="replyWriter" />
+		<result column ="reply_content" property="replyContent" />
+		<result column ="create_date" property="createDate" />
+		
+	</resultMap>
+	<select id="selectTotalRecord" resultType="_int"> <!-- 넘겨줄 땐 type -->
 		select count(*)
 			from board
 		where status='Y'
@@ -22,7 +30,28 @@
 	select *
 	 from board
 	 where status = 'Y'
-	 order by board_no desc
-		
+	 order by board_no desc		
 	</select>
+	
+	<update id="increaseCount">
+		update board
+			set count = count + 1
+		where board_no = #{boardNo}
+				and status = 'Y'
+	</update>
+	
+	<select id="selectBoard" resultMap="boardResultSet"> <!-- 내가 만든거 넘겨줄 땐 map -->
+	select *
+	from board
+	where board_no = #{boardNo}
+	and status = 'Y'
+    </select>	
+    
+    <select id="selectReplyList" resultMap="replyResultSet">
+    	select *
+    	 from reply
+    	 where ref_bno = #{boardNo}
+    	 		and status = 'Y'
+    	 order by reply_no desc
+    </select>
 </mapper>

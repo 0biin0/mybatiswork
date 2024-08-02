@@ -49,7 +49,7 @@
 					<tr>
 						<td>${ b.boardNo }</td>
 						<td style="text-align: left; padding-left: 10px;">
-							<a href="detail.do?bno=${b.boardNo}">${ b.boardTitle }</a>
+						<a href="detail.bo?bno=${b.boardNo}">${ b.boardTitle }</a>
 						</td>
 						<td>${ b.boardWriter }</td>
 						<td>${ b.count }</td>
