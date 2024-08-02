@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Board List</title>
 <style>
-	table {
+	.outer table {
 		border:2px solid ;
 		border-collapse : collapse;
 	}
@@ -41,9 +41,10 @@
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td height="100">${b.boardContent }</td>
+				<td height="100">${ b.boardContent }</td>
 			</tr>
 		</table>
+		<br>
 		<table border="1">
 			<tr>
 				<th width="100">댓글작성</th>
@@ -51,16 +52,17 @@
 				<th width="100"><button>등록</button></th>
 			</tr>
 			<tr>
-				<th colspan="3" style="text-align:center">댓글(${rlist.size() })</th>
+				<th colspan="3" style="text-align:center">댓글(${rlist.size()})</th>
 			</tr>
-			<c:forEach var="r" items="${rlist }">
-					<tr>
-				<td>${r.replyWriter }</td>
-				<td>${r.replyContent }</td>
-				<td>${r.createDate }</td>
-			</tr>
+			
+			<c:forEach var="r" items="${rlist}">
+				<tr>
+					<td>${r.replyWriter}</td>
+					<td>${r.replyContent}</td>
+					<td>${r.createDate.substring(0,10)}</td>
+				</tr>
 			</c:forEach>
-		
+			
 		</table>
 	</div>
 </body>

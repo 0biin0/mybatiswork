@@ -45,11 +45,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="b" items="${ list }">
+				<c:forEach var="b" items="${ list }" varStatus="s">
 					<tr>
-						<td>${ b.boardNo }</td>
+						<td>${pi.totalRecord-((pi.nowPage-1)*pi.numPerPage)-s.index}</td>
 						<td style="text-align: left; padding-left: 10px;">
-						<a href="detail.bo?bno=${b.boardNo}">${ b.boardTitle }</a>
+							<a href="detail.bo?bno=${b.boardNo}">${ b.boardTitle }</a>
 						</td>
 						<td>${ b.boardWriter }</td>
 						<td>${ b.count }</td>
@@ -61,15 +61,50 @@
 		
 		<div id="paging-area">
 			<c:if test="${ pi.nowPage ne 1 }">
-				<a href="list.bo?nowPage=${ pi.nowPage - 1 }">[이전]</a>
+				<c:choose>
+					<c:when test="${empty keyField}">
+						<a href="list.bo?nowPage=${ pi.nowPage - 1 }">[이전]</a>
+					</c:when>
+					<c:otherwise>
+						<a href="search.bo?nowPage=${pi.nowPage-1}&keyField=${keyField}&keyword=${keyword}">[이전]</a>
+					</c:otherwise>
+				</c:choose>
 			</c:if>
 			
 			<c:forEach var="p" begin="${ pi.startPage }" end = "${ pi.endPage }">
-				<a href="list.bo?nowPage=${p}">[${p}]</a>
+				<c:choose>
+					<c:when test="${empty keyField}">
+						<c:choose>
+							<c:when test="${p eq pi.nowPage}">
+								<a href="list.bo?nowPage=${p}" style="color:lightskyblue">[${p}]</a>
+							</c:when>
+							<c:otherwise>
+								<a href="list.bo?nowPage=${p}">[${p}]</a>
+							</c:otherwise>	
+						</c:choose>
+					</c:when>
+					<c:otherwise>
+						<c:choose>
+							<c:when test="${p eq pi.nowPage}">
+								<a href="search.bo?nowPage=${p}&keyField=${keyField}&keyword=${keyword}" style="color:lightskyblue">[${p}]</a>
+							</c:when>
+							<c:otherwise>
+								<a href="search.bo?nowPage=${p}&keyField=${keyField}&keyword=${keyword}">[${p}]</a>
+							</c:otherwise>
+						</c:choose>
+					</c:otherwise>
+				</c:choose>
 			</c:forEach>
-			
+
 			<c:if test="${ pi.nowPage ne pi.totalPage }">
-				<a href="list.bo?nowPage=${ pi.nowPage + 1 }">[다음]</a>
+				<c:choose>
+					<c:when test="${empty keyField}">
+						<a href="list.bo?nowPage=${pi.nowPage+1}">[다음]</a>
+					</c:when>
+					<c:otherwise>
+						<a href="search.bo?nowPage=${pi.nowPage+1}&keyField=${keyField}&keyword=${keyword}">[다음]</a>
+					</c:otherwise>
+				</c:choose>
 			</c:if>
 		</div>
 		
