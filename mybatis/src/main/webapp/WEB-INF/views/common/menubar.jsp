@@ -47,7 +47,7 @@
 		            <table>
 		                <tr>
 		                    <td>아이디</td>
-		                    <td><input name="userId" required></td>
+		                    <td><input name="userId" required></td> <!-- userId에 들어온 value값이 login.me로 넘어간다-->
 		                    <td rowspan="2"><button style="height:50px;">로그인</button></td>
 		                </tr>
 		                <tr>

@@ -33,6 +33,8 @@ public class MemberInsertController extends HttpServlet {
 		 */
 		Member m = new Member(
 				request.getParameter("userId"),
+				// getParameter("요청 매개변수이름이며 해당 매개변수의 값이 저장될 변수")
+				// form이 제출되면 서버로 HTTP POST요청이 전송되며, 서버 측에서는 request.getParameter()메서드를 사용하여 "username"및 "password"매개변수의 값을 가져올 수 있다
 				request.getParameter("userPwd"),
 				request.getParameter("userName"),
 				request.getParameter("email"),
