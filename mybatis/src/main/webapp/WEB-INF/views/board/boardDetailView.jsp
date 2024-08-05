@@ -28,7 +28,7 @@
 				url : "rinsert.bo",
 				data : {
 					content : $("#content").val(),
-					bnum : bNo,
+					bnum : bno,
 					userId : id
 				},
 				success:function(result){
@@ -83,8 +83,8 @@
 		<table border="1">
 			<tr>
 				<th width="100">댓글작성</th>
-				<th width="400"><textarea cols="53" rows="3"></textarea></th>
-				<th width="100"><button>등록</button></th>
+				<th width="400"><textarea cols="53" rows="3" id ="content"></textarea></th>
+				<th width="100"><button id="replyInsert">등록</button></th>
 			</tr>
 			<tr>
 				<th colspan="3" style="text-align:center">댓글(${rlist.size()})</th>

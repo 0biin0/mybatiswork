@@ -55,7 +55,5 @@
        where user_id=#{userId} and user_pwd =#{userPwd} and status ='Y'
     </select>
     
-    <insert id="insertReply">
-    	insert into reply values(seq_rno.nextval, #{replyContent}, #{refBno}, #{replyWriter}, default, default)
-    </insert>
+
 </mapper>  

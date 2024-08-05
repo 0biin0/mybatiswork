@@ -18,7 +18,7 @@ public class ReplyInsertController extends HttpServlet {
 		
 		Reply r = new Reply();
 		r.setRefBno(Integer.parseInt(request.getParameter("bnum")));
-		r.setReplyWriter(request.getParameter("id"));
+		r.setReplyWriter(request.getParameter("userId"));
 		r.setReplyContent(request.getParameter("content"));
 		
 		int result = new BoardServiceImpl().insertReply(r);
