@@ -89,4 +89,14 @@
     <servlet-name>BoardSearchController</servlet-name>
     <url-pattern>/search.bo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReplyInsertController</display-name>
+    <servlet-name>ReplyInsertController</servlet-name>
+    <servlet-class>com.study.mybatis.board.controller.ReplyInsertController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReplyInsertController</servlet-name>
+    <url-pattern>/rinsert.bo</url-pattern>
+  </servlet-mapping>
 </web-app>

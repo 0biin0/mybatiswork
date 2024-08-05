@@ -21,4 +21,7 @@ public interface BoardService {
 		// 게시글 검색
 		int selectSearchCount(HashMap<String, String> map);
 		ArrayList<Board> selectSearchList(HashMap<String, String> map, PageInfo pi);
+		
+		// 댓글 등록
+		int insertReply(Reply r);
 }

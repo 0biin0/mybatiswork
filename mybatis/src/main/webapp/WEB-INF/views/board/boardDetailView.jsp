@@ -1,11 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.study.mybatis.member.vo.*" %>
+<%@ page import="com.study.mybatis.board.vo.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	Member m = (Member)session.getAttribute("loginUser");	
+	String id = "";
+	if(m != null){
+		 id = m.getUserId();
+	}
+	
+	Board b = (Board)request.getAttribute("b");
+	int bnum = b.getBoardNo();
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Board List</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(() => {
+		let id ="<%=id%>";
+		let bno = "<%=bnum %>";
+		$("#replyInsert").click(function() {
+			$.ajax({
+				url : "rinsert.bo",
+				data : {
+					content : $("#content").val(),
+					bnum : bNo,
+					userId : id
+				},
+				success:function(result){
+					console.log(result);
+				},
+				error:function(){
+					console.log("ajax 통신 실패");
+				}
+			})
+		})
+	})
+</script>
 <style>
 	.outer table {
 		border:2px solid ;
